@@ -1,0 +1,36 @@
+.action_btn {
+    padding: 1.4em 2.4em;
+    transition: opacity .2s ease-out;
+    transition-delay: .2s;
+    overflow: hidden;
+    line-height: normal;
+    border-radius: 0;
+    background: #4b4b4b;
+    border: none;
+    transition: all .25s ease-in-out;
+    backface-visibility: initial;
+    -webkit-backface-visibility: initial;
+    margin-bottom: 1px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+.action_btn:hover {
+    opacity: 0.8;
+}
+
+.action_btn_text {
+    color: #ffffff;
+    fill: #ffffff;
+    font-weight: bold;
+    letter-spacing: .02em;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+@media (max-width: 800px) {
+    .action_btn {
+        font-size: 14.4px;
+    }
+}

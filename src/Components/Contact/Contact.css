@@ -1,0 +1,59 @@
+.contact_container {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 85px;
+}
+
+.contact_img {
+    border-radius: 50px;
+}
+
+.contact_sub_container {
+    max-width: 47%;
+}
+
+.contact_heading {
+    font-size: 45px;
+}
+
+.contact_para {
+    font-size: 18px;
+}
+
+.name_input_container {
+    display: flex;
+    gap: 20px;
+}
+
+.contact_form_label{
+    margin: 0;
+    font-size: 18px;
+}
+
+.contact_form_fields {
+    color: #636363;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(52,52,52, 0.2);
+    outline: 0;
+    font-weight: 400;
+    border-radius: 0;
+    line-height: 1.5;
+    margin: 0 0 25px;
+    fill: #343434;
+    padding: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 850px) {
+    .contact_container {
+        flex-direction: column;
+        margin-block: 60px;
+    }
+
+    .contact_sub_container {
+        width: 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+.main_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(233,233,233,1);
+    opacity: 1;
+    transition: opacity .25s ease;
+}
+
+.sub_container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+@media (max-width: 600px) {
+    .sub_container {
+        padding: 10px;
+    }
+}

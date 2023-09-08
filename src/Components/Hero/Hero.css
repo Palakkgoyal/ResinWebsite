@@ -1,0 +1,38 @@
+.hero_container {
+    max-width: 1200px;
+}
+
+.hero_heading {
+    font-size: 60px;
+    margin: 0.5em 0;
+    color: #2d2d2d;
+    font-weight: 700;
+    line-height: 1.2em;
+    letter-spacing: .01em;
+    word-wrap: break-word;
+    text-align: left;
+    width: 75%;
+}
+
+.hero_para {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    color: #4f4e4e;
+    font-size: 18px;
+    line-height: 1.4em;
+    letter-spacing: .01em;
+    fill: #4f4e4e;
+    width: 75%;
+}
+
+@media (max-width: 1000px) {
+    .hero_heading {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero_heading, .hero_para {
+        width: 100%;
+    }
+}

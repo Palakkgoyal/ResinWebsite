@@ -1,0 +1,38 @@
+.main_para_styling {
+    margin-top: 1rem;
+    margin: 0.5em 0;
+    color: #4f4e4e;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    fill: #4f4e4e;
+    letter-spacing: .01em;
+    word-wrap: break-word;
+}
+
+.sub_para_styling {
+    color: #343434;
+    font-family: Open Sans, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.8em;
+    letter-spacing: 0em;
+    margin: 1em 0;
+    font-family: Open Sans, sans-serif;
+}
+
+.form_field {
+    color: #636363;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border: 1px solid rgba(52,52,52, 0.2);
+    outline: 0;
+    font-weight: 400;
+    border-radius: 0;
+    line-height: 1.5;
+    margin: 0 0 25px;
+    fill: #343434;
+    padding: 10px;
+    font-size: 16px;
+}

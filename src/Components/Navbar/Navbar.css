@@ -1,0 +1,105 @@
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: Raleway, sans-serif;
+    color: #020202;
+    font-size: 30px;
+    font-weight: 400;
+    fill: #020202;
+    letter-spacing: .02em;
+    transition: all .25s ease-in-out;
+}
+
+.logo:hover {
+    color: #727272;
+    fill: #727272;
+    cursor: pointer;
+}
+
+.nav_list_container {
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+}
+
+.nav_list_container > li {
+    color: #2b2b2b;
+    fill: #2b2b2b;
+    line-height: 1.8em;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: .02em;
+    text-indent: 0.02em;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.nav_list_container > li:hover {
+    border-bottom: 1.5px solid #2b2b2b;
+}
+
+.nav_links {
+    text-decoration: none;
+    color: #2b2b2b;
+    fill: #2b2b2b;
+}
+
+.nav_icons {
+    font-size: 22px;
+    cursor: pointer;
+    color: #272727;
+    fill: #272727;
+    letter-spacing: .02em;
+    text-indent: 0.02em;
+    transition: all .25s ease-in-out;
+}
+
+.nav_icons_container {
+    display: flex;
+    gap: 15px;
+}
+
+.nav_icons:hover {
+    color: #727272;
+    fill: #727272;
+}
+
+.menu_icon {
+    display: none;
+}
+
+.login_btn {
+    padding: 5px 10px;
+    padding-bottom: 2px;
+    margin-top: -4px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #515151;
+    color: whitesmoke;
+    transition: transform 0.2s ease-in-out;
+    font-size: 20px;
+}
+
+.login_btn:hover {
+    background: #272727;
+    transform: translate(0px, -2px);
+}
+
+.login_btn:active {
+    background: #727272;
+}
+
+@media (max-width: 700px) {
+    .menu_icon {
+        display: inline-block;
+    }
+
+    .nav_list_container {
+        display: none;
+    }
+}

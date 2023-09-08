@@ -1,0 +1,81 @@
+.login_dialog_box_container {
+    position: fixed;
+    border: 1px solid red;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    background-color: rgb(245, 244, 244);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 8px;
+    width: 650px;
+}
+
+.auth_close_icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+
+.auth_close_icon:hover {
+    transform: scale(1.1);
+}
+
+.auth_form_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.auth_form_field {
+    /* width: 40vw; */
+    width: 100%;
+
+}
+
+.auth_label {
+    margin: 0;
+    font-size: 18px;
+}
+
+.auth_google_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.toggle_auth {
+    color: blue;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth_note {
+    margin-top: 20px;
+    align-self: flex-start;
+    font-size: 15px;
+}
+
+.toggle_auth:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .login_dialog_box_container {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 400px) {
+    .login_dialog_box_container {
+        width: 90vw;
+    }
+}
