@@ -8,11 +8,7 @@ const Hero = () => {
         Resin Enchantress: Crafting Wonders in the Heart of Delhi
       </h1>
       <p className="hero_para">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Earum corrupti est, odio cum, aspernatur provident dolor,
-        quidem deleniti deserunt accusamus facilis.
-        Quas dignissimos ea hic corrupti sapiente temporibus,
-        recusandae assumenda illum.
+      At Mahi's Resin Art Wonderland, you'll encounter a captivating blend of handmade resin art and intriguing string art. Join her artistic voyage, where each creation represents a passionate effort and showcases the boundless potential of resin art. Whether you're an art lover, a collector, or in search of ideal decor, you're in the right spot.
       </p>
     </div>
   )

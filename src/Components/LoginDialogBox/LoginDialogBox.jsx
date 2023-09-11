@@ -76,7 +76,7 @@ function handleChange(event) {
           onChange={handleChange}
           value={formData.password}
         />
-        <ActionBtn text="Submit" />
+        <ActionBtn text="Submit" onClick={handleShowForm} />
       </form>
       <div>
         <span></span>
@@ -85,7 +85,10 @@ function handleChange(event) {
       </div>
       <div className="auth_google_btn_container">
         <GoogleButton
-          onClick={signInWithGoogle}
+          onClick={() => {
+            signInWithGoogle()
+            handleShowForm()
+          }}
         />
       </div>
       <p className="auth_note">
