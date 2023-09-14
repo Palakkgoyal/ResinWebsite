@@ -4,6 +4,7 @@ import About from "./About/About";
 import Contact from "./Contact/Contact";
 import Gallery from "./Gallery/Gallery";
 import Profile from "./Profile/Profile";
+import Product from "./Product/Product";
 
 export {
     Layout,
@@ -12,4 +13,5 @@ export {
     Contact,
     Gallery,
     Profile,
+    Product,
 }

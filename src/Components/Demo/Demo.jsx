@@ -5,24 +5,24 @@ import ActionBtn from "../ActionBtn/ActionBtn"
 const Demo = () => {
     return (
         <>
-            <div className="demo_container">
-                <div className="demo_box">
-                    <img src={demoImg} className="demo_img" />
+            <div className="display_img_container">
+                <div className="display_img_box">
+                    <img src={demoImg} className="display_img" />
                 </div>
-                <div className="demo_box">
-                    <img src={demoImg2} className="demo_img" />
+                <div className="display_img_box">
+                    <img src={demoImg2} className="display_img" />
                 </div>
-                <div className="demo_box">
-                    <img src={demoImg3} className="demo_img" />
+                <div className="display_img_box">
+                    <img src={demoImg3} className="display_img" />
                 </div>
-                <div className="demo_box">
-                    <img src={demoImg4} className="demo_img" />
+                <div className="display_img_box">
+                    <img src={demoImg4} className="display_img" />
                 </div>
-                <div className="demo_box">
-                    <img src={demoImg3} className="demo_img" />
+                <div className="display_img_box">
+                    <img src={demoImg3} className="display_img" />
                 </div>
-                <div className="demo_box">
-                    <img src={demoImg} className="demo_img" />
+                <div className="display_img_box">
+                    <img src={demoImg} className="display_img" />
                 </div>
             </div>
             <ActionBtn text="See My Work" target="/gallery" />

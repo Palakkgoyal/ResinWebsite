@@ -1,32 +1,16 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import "./GalleryComponent.css"
 import { db } from "../../lib/firebase"
 import isOwner from "../../js/Owner"
 import AddWork from "./AddWork"
+import Loader from "../Loader/Loader"
+import { useNavigate } from "react-router-dom"
 
 
 const GalleryComponent = () => {
     const [addWork, setAddWork] = useState(false)
-    const [workDocuments, setWorkDocuments] = useState([]);
-
-    useEffect(() => {
-        // Define a reference to your Firestore collection
-        const workCollectionRef = db.collection('work');
-        console.log("running")
-        // Fetch documents from the collection
-        const unsubscribe = workCollectionRef.onSnapshot((snapshot) => {
-            const data = [];
-            snapshot.forEach((doc) => {
-                data.push({ id: doc.id, ...doc.data() });
-            });
-            setWorkDocuments(data);
-        });
-
-        return () => {
-            // Unsubscribe from the Firestore collection when the component unmounts
-            unsubscribe();
-        };
-    }, []);
+    const [workDocuments, setWorkDocuments] = useWorkData();
+    const navigate = useNavigate();
 
     return (
         <div className="gallery_container">
@@ -44,13 +28,48 @@ const GalleryComponent = () => {
                     Work
                 </h2>
             </div>
-            <div className="gallery_image_container">
+            {workDocuments? (
+            <div className="display_img_container">
                 {workDocuments.map(doc => (
-                    <img src={doc.image} alt={doc.name} key={doc.id} className="gallery_image" />
+                    <div className="display_img_box" key={doc.id}>
+                        <img
+                            src={doc.image}
+                            alt={doc.name}
+                            className="display_img gallery_image"
+                            onClick={() => navigate(doc.id)}
+                        />
+                    </div>
                 ))}
             </div>
+            ) : (
+                <Loader />
+            )}
         </div>
     )
 }
 
 export default GalleryComponent
+
+
+
+function useWorkData() {
+    const [workDocuments, setWorkDocuments] = useState([]);
+
+    useEffect(() => {
+        // Define a reference to your Firestore collection
+        const workCollectionRef = db.collection('work');
+        console.log("running")
+        // Fetch documents from the collection
+        const unsubscribe = workCollectionRef.onSnapshot((snapshot) => {
+            const data = [];
+            snapshot.forEach((doc) => {
+                data.push({ id: doc.id, ...doc.data() });
+            });
+            setWorkDocuments(data);
+        });
+
+        return () => { unsubscribe() };
+    }, []);
+
+    return [workDocuments, setWorkDocuments]
+}

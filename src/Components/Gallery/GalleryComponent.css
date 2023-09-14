@@ -32,18 +32,9 @@
     fill: #2d2d2d;
 }
 
-.gallery_image_container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
 .gallery_image {
-    max-width: 700px;
-    max-height: 600px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    box-shadow: 2px 2px 3px grey, -1px -1px 1px grey;
+    border: 1px solid rgb(165, 164, 164);
+    box-shadow: 1px 1px 3px rgb(159, 159, 159), -1px -1px 5px rgb(199, 199, 199);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
@@ -90,7 +81,6 @@
     margin: 0;
     cursor: pointer;
     margin-bottom: 15px;
-    /* aspect-ratio: 1 !important; */
 }
 
 .add_art_img_label:hover {

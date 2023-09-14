@@ -6,6 +6,7 @@ import AboutComponent from "./About/About";
 import ContactComponent from "./Contact/Contact";
 import GalleryComponent from "./Gallery/GalleryComponent";
 import ProfileComponent from "./Profile/ProfileComponent";
+import ProductComponent from "./Product/ProductComponent";
 
 export {
     Navbar,
@@ -16,4 +17,5 @@ export {
     ContactComponent,
     GalleryComponent,
     ProfileComponent,
+    ProductComponent,
 }
