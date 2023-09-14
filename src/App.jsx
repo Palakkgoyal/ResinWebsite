@@ -2,6 +2,8 @@ import './App.css'
 import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import { Layout, Home, About, Contact, Gallery, Profile } from './Pages';
 import useAuthChange from './js/useAuthChange';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const user = useAuthChange()
@@ -19,6 +21,7 @@ function App() {
             <Route path="*" element={<p>404</p>} />
           </Route>
         </Routes>
+        <ToastContainer />
       </div>
     </div>
   )

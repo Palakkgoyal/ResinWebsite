@@ -26,7 +26,7 @@
     display: block;
     width: 100%;
     background: #fff;
-    border: 1px solid rgba(52,52,52, 0.2);
+    border: 1px solid rgba(52, 52, 52, 0.2);
     outline: 0;
     font-weight: 400;
     border-radius: 0;
@@ -35,4 +35,20 @@
     fill: #343434;
     padding: 10px;
     font-size: 16px;
+}
+
+
+/* --------------------- TOASTIFY CSS FIXED ON SMALL DEVICES ---------------- */
+
+@media only screen and (max-width: 480px) {
+
+    .Toastify__toast-container--top-left,
+    .Toastify__toast-container--top-center,
+    .Toastify__toast-container--top-right {
+        top: 1em !important;
+    }
+    .Toastify__toast-container {
+        width: 80vw !important;
+        left: auto !important;
+    }
 }
