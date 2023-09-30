@@ -60,7 +60,6 @@ function useProductData(uid) {
     const workRef = db.collection("work").doc(uid);
 
     const unsubscribe = workRef.onSnapshot((doc) => {
-      console.log("Fetched")
       if (doc.exists) {
         setProductData(doc.data());
       } else {

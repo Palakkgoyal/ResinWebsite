@@ -18,10 +18,8 @@ export default function handleChange(event, setFormData) {
   })
 }
 
-function validateImg(e) {
-  const img = e.target.files[0];
-  if (!img.name.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
-    console.log("running")
+function validateImg(img) {
+  if (!img?.name?.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
     toast.error("Please select valid image!", {
       position: toast.POSITION.TOP_RIGHT
     })

@@ -1,5 +1,12 @@
 .hero_container {
     max-width: 1200px;
+    text-align: center;
+    border: 1px solid red;
+    margin-inline: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hero_heading {
@@ -11,6 +18,7 @@
     letter-spacing: .01em;
     word-wrap: break-word;
     text-align: left;
+    text-align: center;
     width: 75%;
 }
 
@@ -18,7 +26,7 @@
     font-family: Raleway, sans-serif;
     font-weight: 400;
     color: #4f4e4e;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.4em;
     letter-spacing: .01em;
     fill: #4f4e4e;

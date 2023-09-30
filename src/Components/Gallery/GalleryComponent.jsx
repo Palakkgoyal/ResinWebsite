@@ -58,7 +58,6 @@ function useWorkData() {
     useEffect(() => {
         // Define a reference to your Firestore collection
         const workCollectionRef = db.collection('work');
-        console.log("running")
         // Fetch documents from the collection
         const unsubscribe = workCollectionRef.onSnapshot((snapshot) => {
             const data = [];

@@ -56,11 +56,16 @@ const ContactComponent = () => {
         <span className="sub_para_styling contact_para">
           If you would like to book a workshop or commission a
           piece of art to your specific requirements please
-          contact Mahi on 000-xxxx-000.
+          contact Mahi on +91 9785171657
           <p
             className="sub_para_styling contact_para"
           >
-            Email adamhalls@gmail.com
+            Email: desarlamahi@gmail.com
+          </p>
+          <p
+            className="sub_para_styling contact_para"
+          >
+            Address: Alot (M.P) Banasthali Vidhyapith (Rajasthan)
           </p>
           <p
             className="sub_para_styling contact_para"

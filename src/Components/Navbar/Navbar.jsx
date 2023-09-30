@@ -35,35 +35,37 @@ const Navbar = () => {
   return (
     <div>
       <header className="nav_container">
-        <h2 className="logo">Mahi Arts</h2>
-        
-          <nav className={`nav_list_main_container ${isSmallScreen && showNavigation && "show_nav"}`}>
-            {isSmallScreen && (
-              <ImCross className="nav_close_icon" onClick={hideNavigation} />)
-            }
-            <ul className="nav_list_container">
-              <li>
-                <Link to={"/"} className="nav_links" onClick={hideNavigation}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to={"/gallery"} className="nav_links" onClick={hideNavigation}>
-                  Gallery
-                </Link>
-              </li>
-              <li>
-                <Link to={"/about"} className="nav_links" onClick={hideNavigation}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to={"/contact"} className="nav_links" onClick={hideNavigation}>
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </nav>
+        <h2 className="logo">
+          The Craft Galleryy
+        </h2>
+
+        <nav className={`nav_list_main_container ${isSmallScreen && showNavigation && "show_nav"}`}>
+          {isSmallScreen && (
+            <ImCross className="nav_close_icon" onClick={hideNavigation} />)
+          }
+          <ul className="nav_list_container">
+            <li>
+              <Link to={"/"} className="nav_links" onClick={hideNavigation}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to={"/gallery"} className="nav_links" onClick={hideNavigation}>
+                Gallery
+              </Link>
+            </li>
+            <li>
+              <Link to={"/about"} className="nav_links" onClick={hideNavigation}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to={"/contact"} className="nav_links" onClick={hideNavigation}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <div className="nav_icons_container">
           <AiOutlineShoppingCart className="nav_icons" />
           <FiMenu className="nav_icons menu_icon" onClick={() => setShowNavigation(prev => !prev)} />

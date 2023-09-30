@@ -8,16 +8,29 @@ const AboutComponent = () => {
             <img src={ownerImg} alt="Mahi Desarla" className="about_img" />
             <div className="about_text_container">
                 <h3 className="main_para_styling about_main_text">
-                    Hello, I am Adam Halls. A textile artist and painter
-                    based on Bodmin Moor, Cornwall. My work is carefully
-                    built up of layers of fabric and paint which are
-                    brought together with many different stitching techniques.
+                    Hello, I am Mahi Desarla,
+                    <br />
+                    An Entrepreneur and
+                    Vice Captain of The Art and Craft Club at
+                    Banasthali Vidyapith
                 </h3>
                 <p className="sub_para_styling about_para">
-                    I am inspired by the intricate details of algae, Lichens,
-                    rust and weathered surfaces. My pieces are incredibly
-                    complex, working on layers and welding them together on
-                    the sewing machine over many weeks.
+                    Starting with a childhood dream, I've turned
+                    my passion into a powerful force. With faith,
+                    hard work, and a calm spirit, I've seen my 
+                    creative endeavors flourish. The joy I find 
+                    in my work is unmatched, driving me tirelessly 
+                    forward. Choosing to follow my heart in 
+                    pursuing my craft has been a game-changer. 
+                    In just one year, my dreams have started to 
+                    come true, thanks to @banasthali_vidyapith. 
+                    I'm proud to be Vice Captain at the Art and 
+                    Craft Club, a dream fulfilled. This role 
+                    carries responsibility and a chance to 
+                    share my skills and creativity. As I 
+                    prepare for my first workshop, this moment 
+                    is filled with meaning. It's just the 
+                    beginning of an extraordinary journey.
                 </p>
                 <p className="about_para">
                     <br />

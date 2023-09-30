@@ -8,62 +8,76 @@ import { toast } from 'react-toastify';
 const AddWork = () => {
     const imgUrlRef = useRef(null)
     const [uploading, setUploading] = useState(false)
-    const [imageUpload, setImageUpload] = useState(null)
+    const [imageUpload, setImageUpload] = useState([])
     const [isValidImage, setIsValidimage] = useState(true)
     const [artData, setArtData] = useState({
         artName: "",
         artPrice: 0,
         artDetails: "",
+        materialUsed: "",
+        dimensions: "",
     })
 
-    const artName = artData.artName,
-        artPrice = artData.artPrice,
-        artDetails = artData.artDetails;
+    const { artName, artPrice, artDetails, materialUsed, dimensions } = artData;
 
     function checkImg(e) {
-        const img = e.target.files[0];
-        if (validateImg(e)) {
-            setImageUpload(img);
-            setIsValidimage(true);
-            return
+        const images = e.target.files;
+        
+        if (images.length > 4) {
+            toast.error("Please select 4 or less images!", {
+                position: toast.POSITION.TOP_RIGHT
+            })
+            return;
         }
+        for (const img of images) {
+            if (validateImg(img)) {
+                setImageUpload(prev => [...prev, img]);
+                continue;
+            }
 
-        setIsValidimage(false);
-        setImageUpload(null);
+            setIsValidimage(false);
+            setImageUpload([]);
+            return;
+        }
     }
 
     async function uploadWorkImg() {
-        if (imageUpload === null || !isValidImage) {
-          setUploading(false);
-          return;
+        if (imageUpload.length < 1 || !isValidImage) {
+            setUploading(false);
+            return;
         }
-      
-        const imgUrl = await uploadImage(imageUpload);
-      
-        if (imgUrl) {
-          imgUrlRef.current = imgUrl;
-          await uploadWork();
+
+        let imgUrlArr = [];
+        for (const img of imageUpload) {
+            const imgUrl = await uploadImage(img)
+            imgUrlArr.push(imgUrl)
+        }
+
+        if (imgUrlArr) {
+            imgUrlRef.current = imgUrlArr;
+            await uploadWork();
         } else {
-          setUploading(false);
+            setUploading(false);
         }
-      }
-      
+    }
+
     async function uploadWork() {
         const workCollection = db.collection('work');
 
         // Data to be added to the document
-        const workData = { ...artData, image: imgUrlRef.current }
+        const workData = { ...artData, images: imgUrlRef.current }
 
         // Add the document with an automatically generated ID
         workCollection.add(workData)
             .then((docRef) => {
-                // console.log("Document written with ID: ", docRef.id);
                 setArtData({
                     artName: "",
                     artPrice: 0,
                     artDetails: "",
+                    materialUsed: "",
+                    dimensions: "",
                 })
-                setImageUpload(null);
+                setImageUpload([]);
                 imgUrlRef.current = null;
                 toast.success("Successfully work uploaded!", {
                     position: toast.POSITION.TOP_RIGHT
@@ -88,13 +102,23 @@ const AddWork = () => {
                         style={{ display: "none" }}
                         required
                         disabled={uploading}
+                        multiple
                     />
                     <label htmlFor="add_art_file" className="">
                         <p className="add_art_img_label">+</p>
                     </label>
-                    {imageUpload && (
-                        <img src={URL.createObjectURL(imageUpload)} className="add_art_img" />
-                    )}
+                    <div className="add_art_images_container display_img_container">
+                        {imageUpload.length >= 1 && (
+                            imageUpload.map((img, idx) => (
+                                <div className="display_img_box" key={idx}>
+                                    <img
+                                        src={URL.createObjectURL(img)}
+                                        className="display_img gallery_image"
+                                    />
+                                </div>
+                            ))
+                        )}
+                    </div>
                 </div>
 
                 <div className="add_art_text_input_container">
@@ -110,6 +134,7 @@ const AddWork = () => {
                             onChange={(e) => handleChange(e, setArtData)}
                             className="form_field add_art_input"
                             required
+                            maxLength={120}
                             disabled={uploading}
                         />
                     </div>
@@ -125,6 +150,7 @@ const AddWork = () => {
                             onChange={(e) => handleChange(e, setArtData)}
                             className="form_field add_art_input"
                             required
+                            min={0}
                             disabled={uploading}
                         />
                     </div>
@@ -137,16 +163,50 @@ const AddWork = () => {
                             id="artDetails"
                             value={artDetails}
                             cols="30"
-                            rows="10"
+                            rows="6"
+                            onChange={(e) => handleChange(e, setArtData)}
+                            className="form_field add_art_input"
+                            maxLength={2000}
+                            required
+                            disabled={uploading}
+                        />
+                    </div>
+                    <div className="add_art_input_container">
+                        <label htmlFor="artDetails" className="sub_para_styling add_art_input_label">
+                            Material Used
+                        </label>
+                        <textarea
+                            name="materialUsed"
+                            id="materialUsed"
+                            value={materialUsed}
+                            cols="30"
+                            rows="2"
+                            maxLength={500}
                             onChange={(e) => handleChange(e, setArtData)}
                             className="form_field add_art_input"
                             required
                             disabled={uploading}
                         />
                     </div>
+                    <div className="add_art_input_container">
+                        <label htmlFor="artDetails" className="sub_para_styling add_art_input_label">
+                            Dimensions
+                        </label>
+                        <input
+                            type="text"
+                            id="dimensions"
+                            name="dimensions"
+                            value={dimensions}
+                            onChange={(e) => handleChange(e, setArtData)}
+                            className="form_field add_art_input"
+                            maxLength={100}
+                            required
+                            disabled={uploading}
+                        />
+                    </div>
                     <ActionBtn
                         text="Add Now"
-                        onClick={async() => {
+                        onClick={async () => {
                             setUploading(true)
                             await uploadWorkImg()
                         }}
