@@ -33,7 +33,7 @@ const GalleryComponent = () => {
                 {workDocuments.map(doc => (
                     <div className="display_img_box" key={doc.id}>
                         <img
-                            src={doc.image}
+                            src={doc.images[0]}
                             alt={doc.name}
                             className="display_img gallery_image"
                             onClick={() => navigate(doc.id)}

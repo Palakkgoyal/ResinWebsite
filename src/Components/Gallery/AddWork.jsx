@@ -104,6 +104,7 @@ const AddWork = () => {
                         disabled={uploading}
                         multiple
                     />
+                   
                     <label htmlFor="add_art_file" className="">
                         <p className="add_art_img_label">+</p>
                     </label>
